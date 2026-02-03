@@ -52,19 +52,3 @@ layout: default
         <a href="{{ site.baseurl }}/stories/" style="display: inline-block; margin-top: 2rem; color: #8b7355; text-decoration: underline;">← Back to Stories</a>
     </div>
 </div>
-
-<script>
-function toggleFullStory() {
-    const fullStory = document.getElementById('full-story');
-    fullStory.style.display = fullStory.style.display === 'none' ? 'block' : 'none';
-    if (fullStory.style.display === 'block') {
-        fullStory.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-function toggleSharePreview(button) {
-    const card = button.closest('.card');
-    const preview = card.querySelector('.share-preview');
-    preview.classList.toggle('visible');
-}
-</script>
