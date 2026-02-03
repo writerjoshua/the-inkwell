@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "about-beau.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "about-beau.md"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "about-beau.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for about-beau.md"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "about-beau.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from about-beau.md"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
+                "file": "about-beau.md.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of about-beau.md"
             }
           }
         ]
@@ -185,7 +185,8 @@
   },
   "active": "dd15ba96741b21e7",
   "lastOpenFiles": [
-    "_layouts/about-beau.md",
+    "index.md",
+    "about-beau.md.md",
     "_poetry/centered-steady.md.md",
     "sentiment.md",
     "_layouts/story.html",
@@ -197,7 +198,6 @@
     "README.md",
     "prompts.md",
     "poetry.md",
-    "index.md",
     "_config 1.yml",
     "Untitled",
     "_config.yml",
