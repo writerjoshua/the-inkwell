@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="container">
+    <div class="feed">
+        <div class="card sentiment">
+            <div class="card-content">
+                <div class="card-header">✨ Sentiment</div>
+                
+                <div class="sentiment-text">{{ content }}</div>
+                
+                <div class="card-footer">
+                    <span class="timestamp">{{ page.date | date: "%b %d, %Y" }}</span>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="toggleSharePreview(this)">Share</button>
+                        <button class="action-btn">Save</button>
+                    </div>
+                </div>
+                
+                <div class="share-preview">
+                    <div class="share-preview-meta"><strong>The Inkwell</strong> — Sentiment</div>
+                    <div class="share-preview-meta">"{{ content | strip_html | truncatewords: 15 }}"</div>
+                    <div class="share-preview-meta">💌 Poetry and Prose by Beau Holliday</div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="{{ site.baseurl }}/sentiment/" style="display: inline-block; margin-top: 2rem; color: #8b7355; text-decoration: underline;">← Back to Sentiment</a>
+    </div>
+</div>
+
+<script>
+function toggleSharePreview(button) {
+    const card = button.closest('.card');
+    const preview = card.querySelector('.share-preview');
+    preview.classList.toggle('visible');
+}
+</script>
