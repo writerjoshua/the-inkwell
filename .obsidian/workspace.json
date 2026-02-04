@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "assets/posts/poetry/poetry.md",
+                "file": "assets/posts/sentiment/sentiment template.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "poetry"
+              "title": "sentiment template"
             }
           }
         ]
@@ -185,8 +185,8 @@
   },
   "active": "7a528a20c893f3c1",
   "lastOpenFiles": [
+    "assets/posts/poetry/2026-02 where is she going.md",
     "assets/posts/about-beau.md",
-    "assets/posts/poetry/poetry.md",
     "assets/posts/sentiment/sentiment template.md",
     "assets/posts/stories/Story Template.md",
     "assets/posts/library.md",
