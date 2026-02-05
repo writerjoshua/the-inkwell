@@ -130,29 +130,29 @@ async function fetchFilesFromGitHub(path) {
 // Fetch markdown files
 async function fetchMarkdownFiles(type) {
     try {
+        const mdFiles = await fetchFilesFromGitHub(type);
+
+if (mdFiles.length === 0) {
+    console.log(`No markdown files found in ${POSTS_PATH}/${type}`);
+    return [];
+}
+
+const posts = [];
+
+for (const file of mdFiles) {
+    try {
         const response = await fetch(`https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/assets/posts/${type}/${file.name}`);
-        
-        if (mdFiles.length === 0) {
-            console.log(`No markdown files found in ${POSTS_PATH}/${type}`);
-            return [];
+        if (response.ok) {
+            const markdown = await response.text();
+            const post = parseMarkdown(markdown, type, file.name);
+            if (post) posts.push(post);
         }
+    } catch (err) {
+        console.log(`Error loading ${type}/${file.name}:`, err);
+    }
+}
 
-        const posts = [];
-
-        for (const file of mdFiles) {
-            try {
-                const response = await fetch(`${BASE_URL}/assets/posts/${type}/${file.name}`);
-                if (response.ok) {
-                    const markdown = await response.text();
-                    const post = parseMarkdown(markdown, type, file.name);
-                    if (post) posts.push(post);
-                }
-            } catch (err) {
-                console.log(`Error loading ${type}/${file.name}:`, err);
-            }
-        }
-
-        return posts;
+return posts;
     } catch (err) {
         console.log(`Error in fetchMarkdownFiles for ${type}:`, err);
         return [];
