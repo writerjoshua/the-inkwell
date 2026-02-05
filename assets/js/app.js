@@ -4,7 +4,7 @@ const BASE_URL = '/The-Inkwell';
 const GITHUB_OWNER = 'writerjoshua';
 const GITHUB_REPO = 'The-Inkwell';
 const GITHUB_API = 'https://api.github.com/repos';
-const POSTS_PATH = 'posts/';
+const POSTS_PATH = 'assets/posts';
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
@@ -141,7 +141,7 @@ async function fetchMarkdownFiles(type) {
 
         for (const file of mdFiles) {
             try {
-                const response = await fetch(`${BASE_URL}/assets/posts/${type}/${file.name}`);
+                const response = await fetch(`${BASE_URL}/posts/${type}/${file.name}`);
                 if (response.ok) {
                     const markdown = await response.text();
                     const post = parseMarkdown(markdown, type, file.name);
