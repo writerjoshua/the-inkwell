@@ -1,8 +1,8 @@
 // The Inkwell — SPA Application with GitHub API Auto-Discovery
 
-const BASE_URL = '/the-inkwell';
+const BASE_URL = '/The-Inkwell';
 const GITHUB_OWNER = 'writerjoshua';
-const GITHUB_REPO = 'the-inkwell';
+const GITHUB_REPO = 'The-Inkwell';
 const GITHUB_API = 'https://api.github.com/repos';
 const POSTS_PATH = 'assets/posts';
 
@@ -141,7 +141,7 @@ async function fetchMarkdownFiles(type) {
 
         for (const file of mdFiles) {
             try {
-                const response = await fetch(`${BASE_URL}/posts/${type}/${file.name}`);
+                const response = await fetch(`${BASE_URL}/assets/posts/${type}/${file.name}`);
                 if (response.ok) {
                     const markdown = await response.text();
                     const post = parseMarkdown(markdown, type, file.name);
@@ -162,7 +162,7 @@ async function fetchMarkdownFiles(type) {
 // Fetch markdown page
 async function fetchMarkdownPage(filename) {
     try {
-        const response = await fetch(`${BASE_URL}/assets/posts/${type}/${file.name}`);
+        const response = await fetch(`${BASE_URL}/assets/posts/${filename}.md`);
         if (!response.ok) {
             return `<div class="empty-state"><p>Page not found. 💌</p></div>`;
         }
@@ -269,10 +269,10 @@ function parseContentMarkdown(markdown) {
 async function renderHome() {
     try {
         const [allPoetry, allSentiment, allStories, allPrompts] = await Promise.all([
-            fetchMarkdownFiles('assets/poetry'),
-            fetchMarkdownFiles('assets/sentiment'),
-            fetchMarkdownFiles('assets/stories'),
-            fetchMarkdownFiles('assets/prompts')
+            fetchMarkdownFiles('poetry'),
+            fetchMarkdownFiles('sentiment'),
+            fetchMarkdownFiles('stories'),
+            fetchMarkdownFiles('prompts')
         ]);
 
         const allPosts = [
@@ -308,7 +308,7 @@ function renderHero() {
         <div class="hero">
             <div class="hero-content">
                 <h2>The Inkwell</h2>
-                <p>By Beau Holliday</p>
+                <p>Essays in Romance & Reverie</p>
                 <p style="margin-top: 1.5rem; font-size: 1rem;">Poetry and prose exploring desire, vulnerability, and the spaces between words.</p>
             </div>
         </div>
