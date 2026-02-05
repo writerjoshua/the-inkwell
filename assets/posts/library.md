@@ -1,7 +1,6 @@
-
 ---
-Title: The Library
-Author: Beau Holliday
+title: The Library
+author: Beau Holliday
 ---
 
 # Welcome to the Library
