@@ -1,6 +1,6 @@
 // The Inkwell — SPA Application with Side Navigation
 
-const BASE_URL = '/The-Inkwell';
+const BASE_URL = '/the-inkwell';
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
