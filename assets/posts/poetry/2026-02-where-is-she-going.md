@@ -1,8 +1,8 @@
 
 ---
-Title: Where Is She Going?
-Author: Beau Holliday
-Date: 2026-04-02
+title: Where Is She Going?
+author: Beau Holliday
+date: 2026-04-02
 ---
 
 And in such a hurry
