@@ -162,7 +162,7 @@ async function fetchMarkdownFiles(type) {
 // Fetch markdown page
 async function fetchMarkdownPage(filename) {
     try {
-        const response = await fetch(`${BASE_URL}/assets/posts/${filename}.md`);
+        const response = await fetch(`${BASE_URL}/assets/posts/${type}/${file.name}`);
         if (!response.ok) {
             return `<div class="empty-state"><p>Page not found. 💌</p></div>`;
         }
@@ -269,10 +269,10 @@ function parseContentMarkdown(markdown) {
 async function renderHome() {
     try {
         const [allPoetry, allSentiment, allStories, allPrompts] = await Promise.all([
-            fetchMarkdownFiles('poetry'),
-            fetchMarkdownFiles('sentiment'),
-            fetchMarkdownFiles('stories'),
-            fetchMarkdownFiles('prompts')
+            fetchMarkdownFiles('assets/poetry'),
+            fetchMarkdownFiles('assets/sentiment'),
+            fetchMarkdownFiles('assets/stories'),
+            fetchMarkdownFiles('assets/prompts')
         ]);
 
         const allPosts = [
@@ -308,7 +308,7 @@ function renderHero() {
         <div class="hero">
             <div class="hero-content">
                 <h2>The Inkwell</h2>
-                <p>Essays in Romance & Reverie</p>
+                <p>By Beau Holliday</p>
                 <p style="margin-top: 1.5rem; font-size: 1rem;">Poetry and prose exploring desire, vulnerability, and the spaces between words.</p>
             </div>
         </div>
