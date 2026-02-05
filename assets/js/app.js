@@ -4,6 +4,7 @@ const BASE_URL = '/The-Inkwell';
 const GITHUB_OWNER = 'writerjoshua';
 const GITHUB_REPO = 'The-Inkwell';
 const GITHUB_API = 'https://api.github.com/repos';
+const POSTS_PATH = 'assets/posts';
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
@@ -107,7 +108,7 @@ function loadPage(page) {
 // Fetch files from GitHub API
 async function fetchFilesFromGitHub(path) {
     try {
-        const url = `${GITHUB_API}/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`;
+        const url = `${GITHUB_API}/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${POSTS_PATH}/${path}`;
         const response = await fetch(url);
         
         if (!response.ok) {
@@ -117,7 +118,6 @@ async function fetchFilesFromGitHub(path) {
 
         const files = await response.json();
         
-        // Filter for .md files only
         return Array.isArray(files) 
             ? files.filter(f => f.name.endsWith('.md') && f.type === 'file')
             : [];
@@ -130,10 +130,10 @@ async function fetchFilesFromGitHub(path) {
 // Fetch markdown files
 async function fetchMarkdownFiles(type) {
     try {
-        const mdFiles = await fetchFilesFromGitHub(`posts/${type}`);
+        const mdFiles = await fetchFilesFromGitHub(type);
         
         if (mdFiles.length === 0) {
-            console.log(`No markdown files found in posts/${type}`);
+            console.log(`No markdown files found in ${POSTS_PATH}/${type}`);
             return [];
         }
 
@@ -141,7 +141,7 @@ async function fetchMarkdownFiles(type) {
 
         for (const file of mdFiles) {
             try {
-                const response = await fetch(`${BASE_URL}/posts/${type}/${file.name}`);
+                const response = await fetch(`${BASE_URL}/assets/posts/${type}/${file.name}`);
                 if (response.ok) {
                     const markdown = await response.text();
                     const post = parseMarkdown(markdown, type, file.name);
@@ -162,7 +162,7 @@ async function fetchMarkdownFiles(type) {
 // Fetch markdown page
 async function fetchMarkdownPage(filename) {
     try {
-        const response = await fetch(`${BASE_URL}/posts/${filename}.md`);
+        const response = await fetch(`${BASE_URL}/assets/posts/${filename}.md`);
         if (!response.ok) {
             return `<div class="empty-state"><p>Page not found. 💌</p></div>`;
         }
@@ -318,7 +318,7 @@ function renderHero() {
 // Render Library Preview
 async function renderLibraryPreview() {
     try {
-        const response = await fetch(`${BASE_URL}/posts/library.md`);
+        const response = await fetch(`${BASE_URL}/assets/posts/library.md`);
         if (!response.ok) return '';
 
         const markdown = await response.text();
