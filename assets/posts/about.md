@@ -1,5 +1,4 @@
 
---
 Title: About Beau
 Author: Beau Holliday
 --
