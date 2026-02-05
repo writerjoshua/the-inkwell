@@ -1,5 +1,7 @@
 // The Inkwell — SPA Application with Side Navigation
 
+const BASE_URL = '/The-Inkwell';
+
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
     setupNavigation();
@@ -146,7 +148,7 @@ function renderHero() {
 // Render Library Preview
 async function renderLibraryPreview() {
     try {
-        const response = await fetch('posts/library.md');
+        const response = await fetch(`${BASE_URL}/posts/library.md`);
         if (!response.ok) return '';
 
         const markdown = await response.text();
@@ -170,7 +172,7 @@ async function renderLibraryPreview() {
 // Fetch markdown files
 async function fetchMarkdownFiles(type) {
     try {
-        const response = await fetch(`posts/${type}/`);
+        const response = await fetch(`${BASE_URL}/posts/${type}/`);
         if (!response.ok) return [];
 
         const html = await response.text();
@@ -186,7 +188,7 @@ async function fetchMarkdownFiles(type) {
 
         for (const filename of links) {
             try {
-                const postResponse = await fetch(`posts/${type}/${filename}`);
+                const postResponse = await fetch(`${BASE_URL}/posts/${type}/${filename}`);
                 if (postResponse.ok) {
                     const markdown = await postResponse.text();
                     const post = parseMarkdown(markdown, type, filename);
@@ -207,7 +209,7 @@ async function fetchMarkdownFiles(type) {
 // Fetch and render markdown page
 async function fetchMarkdownPage(filename) {
     try {
-        const response = await fetch(`posts/${filename}.md`);
+        const response = await fetch(`${BASE_URL}/posts/${filename}.md`);
         if (!response.ok) {
             return `<div class="empty-state"><p>Page not found. 💌</p></div>`;
         }
@@ -249,7 +251,7 @@ function parseMarkdown(markdown, type, filename) {
         const [key, ...valueParts] = line.split(':');
         if (key && valueParts.length > 0) {
             const value = valueParts.join(':').trim().replace(/^['"]|['"]$/g, '');
-            metadata[key.trim()] = value;
+            metadata[key.trim().toLowerCase()] = value;
         }
     });
 
@@ -283,7 +285,7 @@ function parsePageMarkdown(markdown) {
             const [key, ...valueParts] = line.split(':');
             if (key && valueParts.length > 0) {
                 const value = valueParts.join(':').trim().replace(/^['"]|['"]$/g, '');
-                metadata[key.trim()] = value;
+                metadata[key.trim().toLowerCase()] = value;
             }
         });
     }
@@ -409,7 +411,7 @@ function renderPostCard(post) {
         return `
             <div class="card story" data-post-id="${id}" data-type="stories">
                 <div class="story-cover">
-                    <img src="${cover}" alt="${escapeHtml(title)}">
+                    <img src="${BASE_URL}${cover}" alt="${escapeHtml(title)}">
                 </div>
                 <div class="story-info">
                     <div class="card-header">📖 Short Story</div>
@@ -435,7 +437,7 @@ function renderPostCard(post) {
     if (type === 'prompts') {
         return `
             <div class="card prompt" data-post-id="${id}" data-type="prompts">
-                <div class="prompt-background" style="background-image: url('${image}');"></div>
+                <div class="prompt-background" style="background-image: url('${BASE_URL}${image}');"></div>
                 <div class="prompt-overlay"></div>
                 <div class="prompt-content">
                     <h2 class="prompt-title">${escapeHtml(title)}</h2>
@@ -485,7 +487,7 @@ function renderPromptPage(postId, post) {
     return `
         <div style="max-width: 900px; margin: 0 auto;">
             <div class="card prompt" style="min-height: auto; margin-bottom: 2rem;">
-                <div class="prompt-background" style="background-image: url('${post.image}');"></div>
+                <div class="prompt-background" style="background-image: url('${BASE_URL}${post.image}');"></div>
                 <div class="prompt-overlay"></div>
                 <div class="prompt-content">
                     <h2 class="prompt-title">${escapeHtml(post.title)}</h2>
