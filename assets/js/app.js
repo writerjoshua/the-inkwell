@@ -130,7 +130,7 @@ async function fetchFilesFromGitHub(path) {
 // Fetch markdown files
 async function fetchMarkdownFiles(type) {
     try {
-        const mdFiles = await fetchFilesFromGitHub(type);
+        const response = await fetch(`https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/assets/posts/${type}/${file.name}`);
         
         if (mdFiles.length === 0) {
             console.log(`No markdown files found in ${POSTS_PATH}/${type}`);
