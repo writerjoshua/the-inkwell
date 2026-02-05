@@ -1,8 +1,8 @@
 // The Inkwell — SPA Application with GitHub API Auto-Discovery
 
-const BASE_URL = '/The-Inkwell';
+const BASE_URL = '/the-inkwell';
 const GITHUB_OWNER = 'writerjoshua';
-const GITHUB_REPO = 'The-Inkwell';
+const GITHUB_REPO = 'the-inkwell';
 const GITHUB_API = 'https://api.github.com/repos';
 const POSTS_PATH = 'assets/posts';
 
