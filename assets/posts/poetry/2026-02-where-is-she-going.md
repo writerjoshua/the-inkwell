@@ -1,7 +1,11 @@
 ---
 title: Where Is She Going?
 author: Beau Holliday
-date: 2026-04-02
+date: 2026-02-04
+image: assets/media/where-poem.jpg
+twitter-title: "Where Is She Going?"
+twitter-description: "A poem written by the creek"
+keywords: "poetry, romance, author, writer, nature, outdoors, water, personification"
 ---
 
 And in such a hurry
