@@ -234,6 +234,15 @@ body::before {
     padding-bottom: 120px;
 }
 
+/* Typography: restore paragraph spacing (reset removed default p margins) */
+.container p,
+.card p,
+.card-content p,
+.post-content p {
+    margin: 0 0 1rem;
+    line-height: 1.7;
+}
+
 /* Feed */
 .feed {
     display: flex;
