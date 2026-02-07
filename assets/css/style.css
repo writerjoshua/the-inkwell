@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Georgia', monospace;
     background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-pale) 100%);
     color: var(--text-dark);
     min-height: 100vh;
@@ -98,7 +98,7 @@ body::before {
     background: transparent;
     border: none;
     text-align: left;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Georgia', monospace;
     font-size: 0.95rem;
     color: var(--text-dark);
     cursor: pointer;
@@ -130,7 +130,7 @@ body::before {
     padding: 0.8rem 1.5rem;
     background: transparent;
     border: none;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Georgia', monospace;
     font-size: 0.95rem;
     color: var(--text-dark);
     cursor: pointer;

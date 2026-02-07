@@ -328,7 +328,7 @@ async function renderHome() {
             ${renderHero()}
 
             <div class="latest-section">
-                <h2 class="section-title">Latest Writings</h2>
+                <h2 class="section-title">Recent Writings</h2>
                 <div class="feed">
                     ${latestPosts.length > 0 ? latestPosts.map(post => renderPostCard(post)).join('') : '<div class="empty-state"><p>No posts yet. 💌</p></div>'}
                 </div>
@@ -350,6 +350,8 @@ function renderHero() {
                 <h2>The Inkwell</h2>
                 <p>Essays in Romance & Reverie</p>
                 <p class="hero-tagline">Poetry and prose exploring desire, vulnerability, and the spaces between words.</p>
+                <img src="/assets/media/beauholliday-dark.jpg" alt="Beau Holliday" class="hero-image" loading="lazy">
+                <button class="action-btn" onclick="loadPage('about-beau')">About the Author</button>
             </div>
         </div>
     `;
@@ -426,7 +428,7 @@ async function renderCollection(type) {
 
 // Render Post Card
 function renderPostCard(post) {
-    const { type, id, title, date, author, image, excerpt, content, cover } = post;
+    const { type, id, title, date, time, author, image, excerpt, content, cover } = post;
     const dateStr = new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
     if (type === 'poetry') {
