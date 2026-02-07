@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "fda14eef1fd16000",
+        "id": "5528899c3e0f8cd7",
         "type": "tabs",
         "children": [
           {
-            "id": "7a528a20c893f3c1",
+            "id": "aedc77c739eaa624",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "assets/posts/sentiment/sentiment template.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "sentiment template"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks"
             }
           },
           {
@@ -183,12 +178,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "7a528a20c893f3c1",
+  "active": "aedc77c739eaa624",
   "lastOpenFiles": [
+    "assets/posts/sentiment/sentiment template.md",
     "assets/posts/poetry/2026-02 where is she going.md",
     "assets/posts/poetry/2026-02-where-is-she-going.md",
     "assets/media/beauholliday.jpg",
-    "assets/posts/sentiment/sentiment template.md",
     "assets/posts/about-beau.md",
     "assets/posts/stories/Story Template.md",
     "assets/posts/library.md",
