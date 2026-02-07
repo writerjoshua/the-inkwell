@@ -23,8 +23,8 @@ Coming Soon
 Coming Soon
 ---
 
-**The library is undergoing massive renovation. 
-Stay clear, sweetie...for now.**
+_The library is undergoing massive renovation.  
+Stay clear, sweetie...for now_
 
 I'll come for you when the shelves have been filled.  
 📚
