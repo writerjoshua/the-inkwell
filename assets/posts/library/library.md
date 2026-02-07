@@ -16,15 +16,15 @@ something to hold in your hands,
 make it your own.  
 ---
 
-### She Spoke To Me - a collection of poems she didn't know she wrote
+### She Spoke To Me: A collection of poems she didn't know she wrote
 Coming Soon
 
 ### Sincerely, Beau 
 Coming Soon
 ---
 
-*The library is undergoing massive renovation. 
-Stay clear, sweetie...for now.*
+**The library is undergoing massive renovation. 
+Stay clear, sweetie...for now.**
 
-I'll come for you when the shelves have been filled.
+I'll come for you when the shelves have been filled.  
 📚
